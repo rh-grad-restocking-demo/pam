@@ -9,10 +9,16 @@ public class Shelve implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Category")
+	@org.kie.api.definition.type.Label("Category")
 	private java.lang.String category;
-	@org.kie.api.definition.type.Label(value = "Shelve Item")
-	private java.lang.String shelveItem;
+	@org.kie.api.definition.type.Label("Shelve Item")
+	private java.lang.String sku;
+
+	@org.kie.api.definition.type.Label("restocked?")
+	private java.lang.Boolean restocked;
+
+	@org.kie.api.definition.type.Label(value = "Amount")
+	private java.lang.Integer amount;
 
 	public Shelve() {
 	}
@@ -25,17 +31,36 @@ public class Shelve implements java.io.Serializable {
 		this.category = category;
 	}
 
-	public java.lang.String getShelveItem() {
-		return this.shelveItem;
+	public java.lang.String getSku() {
+		return this.sku;
 	}
 
-	public void setShelveItem(java.lang.String shelveItem) {
-		this.shelveItem = shelveItem;
+	public void setSku(java.lang.String sku) {
+		this.sku = sku;
 	}
 
-	public Shelve(java.lang.String category, java.lang.String shelveItem) {
+	public java.lang.Boolean getRestocked() {
+		return this.restocked;
+	}
+
+	public void setRestocked(java.lang.Boolean restocked) {
+		this.restocked = restocked;
+	}
+
+	public java.lang.Integer getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(java.lang.Integer amount) {
+		this.amount = amount;
+	}
+
+	public Shelve(java.lang.String category, java.lang.String sku,
+			java.lang.Boolean restocked, java.lang.Integer amount) {
 		this.category = category;
-		this.shelveItem = shelveItem;
+		this.sku = sku;
+		this.restocked = restocked;
+		this.amount = amount;
 	}
 
 }
